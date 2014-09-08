@@ -14,6 +14,49 @@
 -->
 <configuration>
 
-<!-- Site specific YARN configuration properties -->
+
+  <!-- Site specific YARN configuration properties -->
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>morzine:8032</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>morzine:9081</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>morzine:8031</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>1</value>
+  </property>
+  <property>
+    <description>Whether physical memory limits will be enforced for
+      containers.
+    </description>
+    <name>yarn.nodemanager.pmem-check-enabled</name>
+    <value>false</value>
+  </property>
+  <!-- we really don't want checking here-->
+  <property>
+    <name>yarn.nodemanager.vmem-check-enabled</name>
+    <value>false</value>
+  </property>
+
+  <!-- how long after a failure to see what is left in the directory-->
+  <property>
+    <name>yarn.nodemanager.delete.debug-delay-sec</name>
+    <value>60000</value>
+  </property>
+
+  <!--time seconds before the process gets a -9 -->
+  <property>
+    <name>yarn.nodemanager.sleep-delay-before-sigkill.ms</name>
+    <value>30000</value>
+  </property>
+
+
 
 </configuration>

@@ -17,4 +17,10 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://morzine:9090</value>
+  </property>
+
 </configuration>
