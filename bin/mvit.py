@@ -21,7 +21,9 @@ import sys
 
 # this runs maven's integration tests ... hard coded for steve's setup
 # TODO: maybe switch this to an env variable
-
+"""
+ -Dslider.conf.dir=C:\Work\clusterconfigs\clusters\morzine\slider
+"""
 args = sys.argv[1 :]
 call(["mvn.bat",
         "integration-test",
