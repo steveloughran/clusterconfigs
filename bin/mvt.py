@@ -19,5 +19,5 @@ from subprocess import call
 import sys
 
 args = sys.argv[1 :]
-call(["mvn", "test", ] + args)
+call(["mvn.bat", "test", ] + args)
 
