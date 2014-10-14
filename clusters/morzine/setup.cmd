@@ -21,5 +21,5 @@ set HADOOP_HEAPSIZE=256
 set CLUSTERDIR=C:\Work\clusterconfigs\clusters\morzine
 set HADOOP_CONF_DIR=C:\Work\clusterconfigs
 
-﻿cd %HADOOP_HOME%
+  cd %HADOOP_HOME%
 
