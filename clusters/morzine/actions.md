@@ -67,6 +67,9 @@ to propagate configs
     http://localhost:50070/
 
 
+    hdfs --config %HADOOP_CONF_DIR% dfs
+
+    hdfs --config %HADOOP_CONF_DIR% dfs -chmod 777 /
 
 
 
@@ -75,4 +78,5 @@ to propagate configs
     yarn --config %HADOOP_CONF_DIR% resourcemanager
     yarn --config %HADOOP_CONF_DIR% nodemanager
 
+    yarn --config %HADOOP_CONF_DIR%  application
     zookeeper-3.4.5/bin/zkServer.sh start
