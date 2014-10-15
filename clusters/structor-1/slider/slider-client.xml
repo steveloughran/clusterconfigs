@@ -34,7 +34,7 @@
 
   <property>
     <name>yarn.resourcemanager.address</name>
-    <value>${hostname}:8030</value>
+    <value>${hostname}:8050</value>
   </property>
 
   <property>
@@ -61,6 +61,11 @@
 
   <property>
     <name>slider.test.agent.enabled</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>ipc.client.fallback-to-simple-auth-allowed</name>
     <value>true</value>
   </property>
 
