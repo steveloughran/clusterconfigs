@@ -57,15 +57,15 @@
     <value>30000</value>
   </property>
 
-<property>
-<name>
-yarn.timeline-service.leveldb-timeline-store.read-cache-size
-</name>
-<value>10000000</value>
-</property>
+  <property>
+    <name>
+      yarn.timeline-service.leveldb-timeline-store.read-cache-size
+    </name>
+    <value>10000000</value>
+  </property>
 
-<property>
-<name>yarn.timeline-service.handler-thread-count</name>
-<value>2</value>
-</property>
+  <property>
+    <name>yarn.timeline-service.handler-thread-count</name>
+    <value>2</value>
+  </property>
 </configuration>

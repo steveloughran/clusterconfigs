@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <property>
+    <name>io.serializations</name>
+    <value>org.apache.hadoop.io.serializer.WritableSerialization</value>
+  </property>
+    
+  <property>
+    <name>hadoop.security.authentication</name>
+    <value>simple</value>
+  </property>
+    
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://nn.example.com:8020</value>
+  </property>
+    
+  <property>
+    <name>fs.trash.interval</name>
+    <value>360</value>
+  </property>
+    
+  <property>
+    <name>io.compression.codecs</name>
+    <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.SnappyCodec</value>
+  </property>
+
+  <property>
+    <name>io.compression.codec.lzo.class</name>
+    <value>com.hadoop.compression.lzo.LzoCodec</value>
+  </property>
+
+  <property>
+    <name>hadoop.security.authorization</name>
+    <value>true</value>
+  </property>
+    
+  <property>
+    <name>ipc.client.connect.max.retries</name>
+    <value>50</value>
+  </property>
+    
+  <property>
+    <name>ipc.client.idlethreshold</name>
+    <value>8000</value>
+  </property>
+    
+  <property>
+    <name>io.file.buffer.size</name>
+    <value>131072</value>
+  </property>
+    
+  <property>
+    <name>ipc.client.connection.maxidletime</name>
+    <value>30000</value>
+  </property>
+    
+</configuration>

@@ -27,36 +27,10 @@
     <description>This is just for diagnostics</description>
   </property>
 
-  <property>
-    <name>hostname</name>
-    <value>nn.example.com</value>
-  </property>
 
   <property>
-    <name>yarn.resourcemanager.address</name>
-    <value>${hostname}:8050</value>
-  </property>
-
-  <property>
-    <name>fs.defaultFS</name>
-    <value>hdfs://${hostname}</value>
-  </property>
-
-  <property>
-    <name>hadoop.registry.zk.quorum</name>
-    <value>${hostname}:2181</value>
-  </property>
-
-  <property>
-    <name>dfs.replication</name>
-    <value>1</value>
-  </property>
-
-  <property>
-    <name>yarn.application.classpath</name>
-    <value>
-      /etc/hadoop/conf,/usr/hdp/current/hadoop-client/*,/usr/hdp/current/hadoop-client/lib/*,/usr/hdp/current/hadoop-hdfs-client/*,/usr/hdp/current/hadoop-hdfs-client/lib/*,/usr/hdp/current/hadoop-yarn-client/*,/usr/hdp/current/hadoop-yarn-client/lib/*,/usr/hdp/current/hadoop-mapreduce-client/*,/usr/hdp/current/hadoop-mapreduce-client/lib/*
-    </value>
+    <name>HADOOP_CONF_DIR</name>
+    <value>${SLIDER_CONF_DIR}/../hadoop-conf</value>
   </property>
 
   <property>

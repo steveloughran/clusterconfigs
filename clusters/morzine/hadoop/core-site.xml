@@ -22,5 +22,16 @@
     <name>fs.defaultFS</name>
     <value>hdfs://morzine:9090</value>
   </property>
+  
+  <!-- registry-->
+  <property>
+    <name>hadoop.registry.rm.enabled</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>hadoop.registry.zk.quorum</name>
+    <value>morzine:2181</value>
+  </property>
 
 </configuration>
