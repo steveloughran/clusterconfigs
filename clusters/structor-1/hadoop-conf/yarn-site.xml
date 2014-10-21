@@ -2,7 +2,12 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 
 <configuration xmlns:xi="http://www.w3.org/2001/XInclude">
-    
+
+  <property>
+    <name>hadoop.registry.zk.quorum</name>
+    <value>nn.example.com:2181</value>
+  </property>
+
   <property>
     <name>yarn.nodemanager.disk-health-checker.min-healthy-disks</name>
     <value>0.25</value>

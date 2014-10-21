@@ -27,10 +27,14 @@
     <description>This is just for diagnostics</description>
   </property>
 
-
   <property>
     <name>HADOOP_CONF_DIR</name>
     <value>${SLIDER_CONF_DIR}/../hadoop-conf</value>
+  </property>
+
+  <property>
+    <name>slider.test.instance.launch.wait.seconds</name>
+    <value>60</value>
   </property>
 
   <property>
@@ -39,8 +43,23 @@
   </property>
 
   <property>
+    <name>hadoop.security.authorization</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>security.slider.protocol.acl</name>
+    <value>*</value>
+  </property>
+
+  <property>
     <name>ipc.client.fallback-to-simple-auth-allowed</name>
     <value>true</value>
+  </property>
+
+  <property>
+    <name>dfs.client.write.exclude.nodes.cache.expiry.interval.millis</name>
+    <value>1000</value>
   </property>
 
 <!--

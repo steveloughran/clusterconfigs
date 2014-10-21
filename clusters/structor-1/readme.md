@@ -27,7 +27,7 @@ fish
     set -x PATH $PATH $SLIDER_BIN
     
     set -gx SLIDER_CONF_DIR ~/Projects/Hortonworks/Projects/clusterconfigs/clusters/structor-1/slider
-    set -gx HADOOP_CONF_DIR SLIDER_CONF_DIR/../hadoop-conf
+    set -gx HADOOP_CONF_DIR $SLIDER_CONF_DIR/../hadoop-conf
     
     echo $status
     
