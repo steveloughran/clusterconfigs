@@ -21,6 +21,7 @@
   They are not passed to the AM
 -->
 <configuration>
+  
   <property>
     <name>slider.client.resource.origin</name>
     <value>clusterconfigs/clusters/structor-1/slider</value>
@@ -47,10 +48,12 @@
     <value>false</value>
   </property>
 
+<!--
   <property>
     <name>security.slider.protocol.acl</name>
     <value>*</value>
   </property>
+-->
 
   <property>
     <name>ipc.client.fallback-to-simple-auth-allowed</name>
@@ -61,8 +64,22 @@
     <name>dfs.client.write.exclude.nodes.cache.expiry.interval.millis</name>
     <value>1000</value>
   </property>
+  
+  <property>
+    <name>slider.test.am.restart.time</name>
+    <value>180000</value>
+  </property>
+  
+  <property>
+    <name>slider.test.launch.python</name>
+    <description>
+      Flag to mandate use of the slider.py script.
+      Ignored on windows —which always uses the python script
+    </description>
+    <value>true</value>
+  </property>
 
-<!--
+  <!--
   <property>
     <name>slider.test.am.restart.time</name>
     <description>Time in millis to await an AM restart</description>
