@@ -18,6 +18,17 @@
 from subprocess import call
 import sys
 
+
+# this runs maven's integration tests ... hard coded for steve's setup
+# TODO: maybe switch this to an env variable
+"""
+ -Dslider.conf.dir=C:\Work\clusterconfigs\clusters\morzine\slider
+
+ mvn install package -Pdist -Pnative-win -Dtar -DskipTests -Dmaven.javadoc.skip=true
+"""
 args = sys.argv[1 :]
-call(["mvn.bat", "test", ] + args)
+call(["mvn.bat",
+        "install", "package", "-Pdist", "-Pnative-win",
+        "-Dtar", "-DskipTests ", "-Dmaven.javadoc.skip=true" ]
+        + args)
 
