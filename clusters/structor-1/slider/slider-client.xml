@@ -67,24 +67,8 @@
   
   <property>
     <name>slider.test.am.restart.time</name>
+    <description>Time in millis to await an AM restart</description>
     <value>180000</value>
   </property>
-  
-  <property>
-    <name>slider.test.launch.python</name>
-    <description>
-      Flag to mandate use of the slider.py script.
-      Ignored on windows —which always uses the python script
-    </description>
-    <value>true</value>
-  </property>
-
-  <!--
-  <property>
-    <name>slider.test.am.restart.time</name>
-    <description>Time in millis to await an AM restart</description>
-    <value></value>
-  </property>
--->
 
 </configuration>
