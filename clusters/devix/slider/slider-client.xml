@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<!--
+  Properties set here are picked up in the client.
+  They are not passed to the AM
+-->
+<configuration>
+  
+  <property>
+    <name>slider.client.resource.origin</name>
+    <value>devix/slider-client</value>
+    <description>This is just for diagnostics</description>
+  </property>
+
+  <property>
+    <name>HADOOP_CONF_DIR</name>
+    <value>${SLIDER_CONF_DIR}/../conf</value>
+  </property>
+
+  <property>
+    <name>slider.test.instance.launch.wait.seconds</name>
+    <value>60</value>
+  </property>
+
+  <property>
+    <name>slider.test.agent.enabled</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>hadoop.security.authorization</name>
+    <value>false</value>
+  </property>
+
+<!--
+  <property>
+    <name>security.slider.protocol.acl</name>
+    <value>*</value>
+  </property>
+-->
+
+  <property>
+    <name>ipc.client.fallback-to-simple-auth-allowed</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>dfs.client.write.exclude.nodes.cache.expiry.interval.millis</name>
+    <value>1000</value>
+  </property>
+  
+  <property>
+    <name>slider.test.am.restart.time</name>
+    <description>Time in millis to await an AM restart</description>
+    <value>180000</value>
+  </property>
+
+</configuration>
