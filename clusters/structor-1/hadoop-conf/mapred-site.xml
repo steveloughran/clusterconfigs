@@ -4,6 +4,21 @@
 <configuration xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <property>
+    <name>mapreduce.application.framework.path</name>
+    <value>hdfs:/hdp/apps/${hdp.version}/mapreduce/mapreduce.tar.gz#mapreduce</value>
+  </property>
+
+  <property>
+    <name>mapreduce.application.classpath</name>
+    <value>mapreduce/hadoop/share/hadoop/mapreduce/*:mapreduce/hadoop/share/hadoop/mapreduce/lib/*:mapreduce/hadoop/share/hadoop/common/*:mapreduce/hadoop/share/hadoop/common/lib/*:mapreduce/hadoop/share/hadoop/yarn/*:mapreduce/hadoop/share/hadoop/yarn/lib/*:mapreduce/hadoop/share/hadoop/hdfs/*:mapreduce/hadoop/share/hadoop/hdfs/lib/*:/usr/hdp/${hdp.version}/hadoop/lib/hadoop-lzo-0.6.0.${hdp.version}.jar</value>
+  </property>
+
+  <property>
+    <name>mapreduce.admin.user.env</name>
+     <value>LD_LIBRARY_PATH=/usr/hdp/${hdp.version}/hadoop/lib/native:/usr/hdp/${hdp.version}/hadoop/lib/native/Linux-amd64-64</value>
+  </property>
+
+  <property>
     <name>mapreduce.jobhistory.address</name>
     <value>nn.example.com:10020</value>
   </property>
@@ -49,11 +64,6 @@
   </property>
     
   <property>
-    <name>mapreduce.application.classpath</name>
-    <value>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*,$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*</value>
-  </property>
-    
-  <property>
     <name>mapreduce.job.reduce.slowstart.completedmaps</name>
     <value>0.05</value>
   </property>
@@ -80,7 +90,7 @@
     
   <property>
     <name>yarn.app.mapreduce.am.admin-command-opts</name>
-    <value>-server -XX:NewRatio=8 -Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN</value>
+    <value>-server -XX:NewRatio=8 -Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Dhdp.version=${hdp.version}</value>
   </property>
     
   <property>
@@ -136,11 +146,6 @@
   <property>
     <name>mapreduce.shuffle.port</name>
     <value>13562</value>
-  </property>
-    
-  <property>
-    <name>mapreduce.admin.user.env</name>
-    <value>LD_LIBRARY_PATH=/usr/lib/hadoop/lib/native:/usr/lib/hadoop/lib/native/Linux-amd64-64</value>
   </property>
     
   <property>

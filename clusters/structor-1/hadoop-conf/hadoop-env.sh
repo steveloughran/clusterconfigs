@@ -4,9 +4,6 @@
 export JAVA_HOME=/usr/java/default
 export HADOOP_HOME_WARN_SUPPRESS=1
 
-# Hadoop Configuration Directory
-export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-/etc/hadoop/conf}
-
 # The maximum amount of heap to use, in MB. Default is 1000.
 export HADOOP_HEAPSIZE=200
 
@@ -59,7 +56,6 @@ do
   JAVA_JDBC_LIBS=${JAVA_JDBC_LIBS}:$jarFile
 done
 #Add libraries required by nodemanager
-MAPREDUCE_LIBS=/usr/lib/hadoop-mapreduce/*
-TEZ_LIBS=/usr/lib/tez/*:/usr/lib/tez/lib/*:/etc/tez/conf
-export HADOOP_CLASSPATH=${HADOOP_CLASSPATH}${JAVA_JDBC_LIBS}
+TEZ_LIBS=/etc/tez/conf:/usr/hdp/${HDP_VERSION}/tez/*:/usr/hdp/${HDP_VERSION}/tez/lib/*
+export HADOOP_CLASSPATH=${HADOOP_CLASSPATH}${JAVA_JDBC_LIBS}:${TEZ_LIBS}
 

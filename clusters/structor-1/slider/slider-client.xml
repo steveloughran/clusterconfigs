@@ -34,6 +34,16 @@
   </property>
 
   <property>
+    <name>hostname</name>
+    <value>nn.example.com</value>
+  </property>
+
+  <property>
+    <name>hadoop.registry.zk.quorum</name>
+    <value>${hostname}:2181</value>
+  </property>
+
+  <property>
     <name>slider.test.instance.launch.wait.seconds</name>
     <value>60</value>
   </property>

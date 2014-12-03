@@ -4,11 +4,6 @@
 <configuration xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <property>
-    <name>hadoop.registry.zk.quorum</name>
-    <value>nn.example.com:2181</value>
-  </property>
-
-  <property>
     <name>yarn.nodemanager.disk-health-checker.min-healthy-disks</name>
     <value>0.25</value>
   </property>
@@ -45,7 +40,7 @@
     
   <property>
     <name>yarn.scheduler.minimum-allocation-mb</name>
-    <value>682</value>
+    <value>64</value>
   </property>
     
   <property>
@@ -120,7 +115,7 @@
     
   <property>
     <name>yarn.nodemanager.delete.debug-delay-sec</name>
-    <value>0</value>
+    <value>3600</value>
   </property>
     
   <property>
@@ -145,7 +140,7 @@
     
   <property>
     <name>yarn.resourcemanager.am.max-attempts</name>
-    <value>2</value>
+    <value>8</value>
   </property>
     
   <property>
@@ -162,7 +157,15 @@
     <name>yarn.nodemanager.vmem-check-enabled</name>
     <value>false</value>
   </property>
-    
+
+  <property>
+    <description>Whether physical memory limits will be enforced for
+      containers.
+    </description>
+    <name>yarn.nodemanager.pmem-check-enabled</name>
+    <value>false</value>
+  </property>
+      
   <property>
     <name>yarn.acl.enable</name>
     <value>false</value>
@@ -210,7 +213,7 @@
 
   <property>
     <name>yarn.application.classpath</name>
-    <value>/etc/hadoop/conf,/usr/hdp/current/hadoop-client/*,/usr/hdp/current/hadoop-client/lib/*,/usr/hdp/current/hadoop-hdfs-client/*,/usr/hdp/current/hadoop-hdfs-client/lib/*,/usr/hdp/current/hadoop-yarn-client/*,/usr/hdp/current/hadoop-yarn-client/lib/*,/usr/hdp/current/hadoop-mapreduce-client/*,/usr/hdp/current/hadoop-mapreduce-client/lib/*</value>
+    <value>/usr/hdp/${hdp.version}/hadoop/conf,/usr/hdp/${hdp.version}/hadoop/*,/usr/hdp/${hdp.version}/lib/*,/usr/hdp/${hdp.version}/hadoop-hdfs/*,/usr/hdp/${hdp.version}/hadoop-hdfs/lib/*,/usr/hdp/${hdp.version}/hadoop-yarn/*,/usr/hdp/${hdp.version}/hadoop-yarn/lib/*,/usr/hdp/${hdp.version}/hadoop-mapreduce/*,/usr/hdp/${hdp.version}/hadoop-mapreduce/lib/*:/usr/hdp/${hdp.version}/hadoop/lib/hadoop-lzo-0.6.0.${hdp.version}.jar</value>
   </property>
     
   <property>

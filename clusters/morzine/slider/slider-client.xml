@@ -44,7 +44,7 @@
   </property>
 
   <property>
-    <name>slider.zookeeper.quorum</name>
+    <name>hadoop.registry.zk.quorum</name>
     <value>${hostname}:2181</value>
   </property>
 
