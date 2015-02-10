@@ -43,11 +43,6 @@
     <value>true</value>
   </property>
 
-  <property>
-    <name>hadoop.security.authorization</name>
-    <value>false</value>
-  </property>
-
 <!--
   <property>
     <name>security.slider.protocol.acl</name>
