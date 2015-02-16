@@ -33,32 +33,11 @@
     <description>This is just for diagnostics</description>
   </property>
 
-  <property>
-    <name>yarn.resourcemanager.address</name>
-    <value>${hostname}:8032</value>
-  </property>
 
   <property>
-    <name>fs.defaultFS</name>
-    <value>hdfs://${hostname}:8020</value>
+    <name>HADOOP_CONF_DIR</name>
+    <value>${SLIDER_CONF_DIR}/../hadoop</value>
   </property>
-
-  <property>
-    <name>hadoop.registry.zk.quorum</name>
-    <value>${hostname}:2181</value>
-  </property>
-
-  <!--
-   This classpath relies on the environment variable HADOOP_HOME being set and everything being
-   installed underneath it -the standard apache installation
-  -->
-  <property>
-    <name>yarn.application.classpath</name>
-    <value>
-      %HADOOP_CONF_DIR%,%HADOOP_HOME%/share/hadoop/common/*,%HADOOP_HOME%/share/hadoop/common/lib/*,%HADOOP_HOME%/share/hadoop/hdfs/*,%HADOOP_HOME%/share/hadoop/hdfs/lib/*,%HADOOP_MAPRED_HOME%/share/hadoop/mapreduce/*,%HADOOP_MAPRED_HOME%/share/hadoop/mapreduce/lib/*,%HADOOP_HOME%/share/hadoop/yarn/*,%HADOOP_HOME%/share/hadoop/yarn/lib/*
-    </value>
-  </property>
-
   <property>
     <name>slider.test.agent.enabled</name>
     <description>Flag to enable/disable Agent tests</description>
@@ -71,6 +50,5 @@
     <description>Time in millis to await an AM restart</description>
     <value>60000</value>
   </property>
-
 
 </configuration>
