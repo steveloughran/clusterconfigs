@@ -38,10 +38,20 @@ if exist %HADOOP_HOME%\contrib\capacity-scheduler (
   )
 )
 
+@rem If TEZ_CLASSPATH is defined in the env, that means that TEZ is enabled
+@rem append it to the HADOOP_CLASSPATH
+
+if defined TEZ_CLASSPATH (
+  if not defined HADOOP_CLASSPATH (
+    set HADOOP_CLASSPATH=%TEZ_CLASSPATH%
+  ) else (
+    set HADOOP_CLASSPATH=%HADOOP_CLASSPATH%;%TEZ_CLASSPATH%
+  )
+)
+
 @rem The maximum amount of heap to use, in MB. Default is 1000.
-set HADOOP_HEAPSIZE=192
-set HADOOP_NAMENODE_INIT_HEAPSIZE="128"
-set YARN_HEAPSIZE=192
+@rem set HADOOP_HEAPSIZE=
+@rem set HADOOP_NAMENODE_INIT_HEAPSIZE=""
 
 @rem Extra Java runtime options.  Empty by default.
 @rem set HADOOP_OPTS=%HADOOP_OPTS% -Djava.net.preferIPv4Stack=true
@@ -59,7 +69,7 @@ set HADOOP_DATANODE_OPTS=-Dhadoop.security.logger=ERROR,RFAS %HADOOP_DATANODE_OP
 set HADOOP_SECONDARYNAMENODE_OPTS=-Dhadoop.security.logger=%HADOOP_SECURITY_LOGGER% -Dhdfs.audit.logger=%HDFS_AUDIT_LOGGER% %HADOOP_SECONDARYNAMENODE_OPTS%
 
 @rem The following applies to multiple commands (fs, dfs, fsck, distcp etc)
-set HADOOP_CLIENT_OPTS=-Xmx192m %HADOOP_CLIENT_OPTS%
+set HADOOP_CLIENT_OPTS=-Xmx512m %HADOOP_CLIENT_OPTS%
 @rem set HADOOP_JAVA_PLATFORM_OPTS="-XX:-UsePerfData %HADOOP_JAVA_PLATFORM_OPTS%"
 
 @rem On secure datanodes, user to run the datanode as after dropping privileges
@@ -72,7 +82,7 @@ set HADOOP_SECURE_DN_USER=%HADOOP_SECURE_DN_USER%
 set HADOOP_SECURE_DN_LOG_DIR=%HADOOP_LOG_DIR%\%HADOOP_HDFS_USER%
 
 @rem The directory where pid files are stored. /tmp by default.
-@rem NOTE: this should be set to a directory that can only be written to by
+@rem NOTE: this should be set to a directory that can only be written to by 
 @rem       the user that will run the hadoop daemons.  Otherwise there is the
 @rem       potential for a symlink attack.
 set HADOOP_PID_DIR=%HADOOP_PID_DIR%
@@ -80,3 +90,4 @@ set HADOOP_SECURE_DN_PID_DIR=%HADOOP_PID_DIR%
 
 @rem A string representing this instance of hadoop. %USERNAME% by default.
 set HADOOP_IDENT_STRING=%USERNAME%
+set HADOOP_NAMENODE_OPTS=-Xloggc:%HADOOP_LOG_DIR%/gc-namenode.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps %HADOOP_NAMENODE_OPTS%

@@ -12,7 +12,6 @@
   limitations under the License. See accompanying LICENSE file.
 -->
 <configuration>
-
   <property>
     <name>yarn.scheduler.capacity.maximum-applications</name>
     <value>10000</value>
@@ -20,7 +19,6 @@
       Maximum number of applications that can be pending and running.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.maximum-am-resource-percent</name>
     <value>0.1</value>
@@ -30,7 +28,6 @@
       applications.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.resource-calculator</name>
     <value>org.apache.hadoop.yarn.util.resource.DefaultResourceCalculator</value>
@@ -42,29 +39,25 @@
       multi-dimensional resources such as Memory, CPU etc.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.queues</name>
-    <value>default</value>
+    <value>default,joblauncher</value>
     <description>
       The queues at the this level (root is the root queue).
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.default.capacity</name>
-    <value>100</value>
+    <value>95</value>
     <description>Default queue target capacity.</description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.default.user-limit-factor</name>
-    <value>1</value>
+    <value>10</value>
     <description>
       Default queue user limit a percentage from 0.0 to 1.0.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.default.maximum-capacity</name>
     <value>100</value>
@@ -72,7 +65,6 @@
       The maximum capacity of the default queue. 
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.default.state</name>
     <value>RUNNING</value>
@@ -80,7 +72,6 @@
       The state of the default queue. State can be one of RUNNING or STOPPED.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.default.acl_submit_applications</name>
     <value>*</value>
@@ -88,7 +79,6 @@
       The ACL of who can submit jobs to the default queue.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.root.default.acl_administer_queue</name>
     <value>*</value>
@@ -96,7 +86,6 @@
       The ACL of who can administer jobs on the default queue.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.node-locality-delay</name>
     <value>40</value>
@@ -107,10 +96,10 @@
       approximately number of nodes in one rack which is 40.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.queue-mappings</name>
-    <value></value>
+    <value>
+    </value>
     <description>
       A list of mappings that will be used to assign jobs to queues
       The syntax for this list is [u|g]:[name]:[queue_name][,next mapping]*
@@ -119,7 +108,6 @@
       as the user.
     </description>
   </property>
-
   <property>
     <name>yarn.scheduler.capacity.queue-mappings-override.enable</name>
     <value>false</value>
@@ -131,4 +119,18 @@
     </description>
   </property>
 
+  <property>
+    <name>yarn.scheduler.capacity.root.joblauncher.capacity</name>
+    <value>5</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.joblauncher.user-limit-factor</name>
+    <value>10</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.capacity.root.joblauncher.maximum-capacity</name>
+    <value>50</value>
+  </property>
 </configuration>

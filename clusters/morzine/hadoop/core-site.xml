@@ -1,29 +1,160 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-<!--
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License. See accompanying LICENSE file.
--->
-
 <!-- Put site-specific property overrides in this file. -->
-
-<configuration>
-
+<configuration xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- i/o properties -->
+  <property>
+    <name>io.file.buffer.size</name>
+    <value>131072</value>
+    <description>The size of buffer for use in sequence files.
+  The size of this buffer should probably be a multiple of hardware
+  page size (4096 on Intel x86), and it determines how much data is
+  buffered during read and write operations.</description>
+  </property>
+  <property>
+    <name>io.serializations</name>
+    <value>org.apache.hadoop.io.serializer.WritableSerialization</value>
+  </property>
+  <property>
+    <name>io.compression.codecs</name>
+    <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec,com.hadoop.compression.lzo.LzoCodec</value>
+    <description>A list of the compression codec classes that can be used
+                 for compression/decompression.</description>
+  </property>
+  <!-- file system properties -->
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://morzine:9090</value>
+    <value>hdfs://MORZINE:8020</value>
+    <description>The name of the default file system.  Either the
+  literal string "local" or a host:port for NDFS.</description>
+    <final>true</final>
   </property>
-  
-  <!-- registry-->
+  <property>
+    <name>fs.trash.interval</name>
+    <value>360</value>
+    <description>Number of minutes after which the checkpoint
+      gets deleted.  If zero, the trash feature is disabled.
+    </description>
+  </property>
+  <property>
+    <name>fs.trash.checkpoint.interval</name>
+    <value>0</value>
+    <description>Number of minutes between trash checkpoints.
+      Should be smaller or equal to fs.trash.interval. If zero,
+      the value is set to the value of fs.trash.interval.
+    </description>
+  </property>
+  <property>
+    <name>fs.permissions.umask-mode</name>
+    <value>022</value>
+    <description>The umask used when creating files and directories.
+      Can be in octal or in symbolic. Examples are: "022" (octal for
+      u=rwx,g=r-x,o=r-x in symbolic), or "u=rwx,g=rwx,o=" (symbolic
+      for 007 in octal).</description>
+  </property>
+  <property>
+    <name>ipc.client.idlethreshold</name>
+    <value>8000</value>
+    <description>Defines the threshold number of connections after which
+               connections will be inspected for idleness.
+    </description>
+  </property>
+  <property>
+    <name>ipc.client.connection.maxidletime</name>
+    <value>30000</value>
+    <description>The maximum time after which a client will bring down the
+               connection to the server.
+    </description>
+  </property>
+  <property>
+    <name>ipc.client.connect.max.retries</name>
+    <value>50</value>
+    <description>Defines the maximum number of retries for IPC connections.</description>
+  </property>
+  <!-- Web Interface Configuration -->
+  <property>
+    <name>hadoop.http.staticuser.user</name>
+    <value>gopher</value>
+    <description>
+      The user name to filter as, on static web filters
+      while rendering content. An example use is the HDFS
+      web UI (user to be used for browsing files).
+    </description>
+  </property>
+  <property>
+    <name>webinterface.private.actions</name>
+    <value>false</value>
+    <description> If set to true, the web interfaces of RM and NN may contain
+                actions, such as kill job, delete file, etc., that should
+                not be exposed to public. Enable this option if the interfaces
+                are only reachable by those who have the right authorization.
+    </description>
+  </property>
+  <property>
+    <name>hadoop.security.authentication</name>
+    <value>simple</value>
+    <description>
+      Set the authentication for the cluster. Valid values are: simple or
+      kerberos.
+    </description>
+  </property>
+  <property>
+    <name>hadoop.security.authorization</name>
+    <value>false</value>
+    <description>
+     Enable authorization for different protocols.
+  </description>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hadoop.groups</name>
+    <value>HadoopUsers</value>
+    <description>
+     Proxy group for Hadoop.
+  </description>
+  </property>
+  <property>
+    <name>hadoop.ssl.enabled</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>hadoop.ssl.require.client.cert</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>hadoop.ssl.hostname.verifier</name>
+    <value>DEFAULT</value>
+  </property>
+  <property>
+    <name>hadoop.ssl.keystores.factory.class</name>
+    <value>org.apache.hadoop.security.ssl.FileBasedKeyStoresFactory</value>
+  </property>
+  <property>
+    <name>hadoop.ssl.server.conf</name>
+    <value>ssl-server.xml</value>
+  </property>
+  <property>
+    <name>hadoop.ssl.client.conf</name>
+    <value>ssl-client.xml</value>
+  </property>
+  <property>
+    <name>hadoop.rpc.protection</name>
+    <value>authentication</value>
+  </property>
+  <!--
+  <property>
+    <name>hadoop.proxyuser.hadoop.hosts</name>
+    <value>192.168.1.138,10.0.3.15</value>
+  </property>
+  -->
+  <property>
+    <name>io.compression.codec.lzo.class</name>
+    <value>com.hadoop.compression.lzo.LzoCodec</value>
+  </property>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>c:\hdp\temp\hadoop</value>
+  </property>
+    <!-- registry-->
   <property>
     <name>hadoop.registry.rm.enabled</name>
     <value>true</value>
