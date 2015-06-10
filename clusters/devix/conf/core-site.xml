@@ -1,6 +1,5 @@
 <!--Tue Dec 16 12:29:42 2014-->
     <configuration>
-    
     <property>
       <name>fs.defaultFS</name>
       <value>hdfs://devix.cotham.uk:8020</value>
@@ -12,6 +11,11 @@
       <value>360</value>
     </property>
     
+    <property>
+      <name>hdp.version</name>
+      <value>2.6.0.2.2.0.0-2041</value>
+    </property>
+
     <property>
       <name>hadoop.http.authentication.cookie.domain</name>
       <value></value>
