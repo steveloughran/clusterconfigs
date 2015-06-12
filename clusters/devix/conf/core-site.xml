@@ -1,5 +1,6 @@
-<!--Tue Dec 16 12:29:42 2014-->
+<!--Fri Jun 12 14:06:21 2015-->
     <configuration>
+    
     <property>
       <name>fs.defaultFS</name>
       <value>hdfs://devix.cotham.uk:8020</value>
@@ -11,11 +12,6 @@
       <value>360</value>
     </property>
     
-    <property>
-      <name>hdp.version</name>
-      <value>2.6.0.2.2.0.0-2041</value>
-    </property>
-
     <property>
       <name>hadoop.http.authentication.cookie.domain</name>
       <value></value>
@@ -43,12 +39,12 @@
     
     <property>
       <name>hadoop.http.authentication.signature.secret</name>
-      <value></value>
+      <value>the-secret</value>
     </property>
     
     <property>
       <name>hadoop.http.authentication.signature.secret.file</name>
-      <value></value>
+      <value>/var/hadoop/http.secret</value>
     </property>
     
     <property>
@@ -73,12 +69,12 @@
     
     <property>
       <name>hadoop.http.authentication.type</name>
-      <value>simple</value>
+      <value>kerberos</value>
     </property>
     
     <property>
       <name>hadoop.http.filter.initializers</name>
-      <value></value>
+      <value>org.apache.hadoop.security.AuthenticationFilterInitializer</value>
     </property>
     
     <property>
