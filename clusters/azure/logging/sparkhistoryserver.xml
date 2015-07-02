@@ -1,7 +1,0 @@
-<service>
-  <id>org.apache.spark.deploy.history.HistoryServer</id>
-  <name>org.apache.spark.deploy.history.HistoryServer</name>
-  <description>This service runs Spark org.apache.spark.deploy.history.HistoryServer</description>
-  <executable>C:\testtools\jdk1.7.0_67\bin\java</executable>
-  <arguments> -classpath "D:\hdp\spark-1.3.1.2.3.0.0-2467\bin\..\lib\spark-assembly-1.3.1.2.3.0.0-2467-hadoop2.7.1.2.3.0.0-2467.jar;;;D:\hdp\spark-1.3.1.2.3.0.0-2467\bin\..\conf;D:\hdp\\\hadoop-2.7.1.2.3.0.0-2467\share\hadoop\common\lib\microsoft-windowsazure-storage-sdk-0.6.0.jar;D:\hdp\\\hadoop-2.7.1.2.3.0.0-2467\share\hadoop\common\hadoop-common-2.7.1.2.3.0.0-2467.jar;D:\hdp\\\hadoop-2.7.1.2.3.0.0-2467\share\hadoop\common\hadoop-lzo-0.4.19.2.3.0.0-2467.jar;D:\hdp\\\hadoop-2.7.1.2.3.0.0-2467\share\hadoop\common\hadoop-azure-2.7.1.2.3.0.0-2467.jar;;D:\hdp\spark-1.3.1.2.3.0.0-2467\bin\..\lib\datanucleus-api-jdo-3.2.6.jar;D:\hdp\spark-1.3.1.2.3.0.0-2467\bin\..\lib\datanucleus-core-3.2.10.jar;D:\hdp\spark-1.3.1.2.3.0.0-2467\bin\..\lib\datanucleus-rdbms-3.2.9.jar;D:\hdp\\\hadoop-2.7.1.2.3.0.0-2467\etc\hadoop;"  -Dspark.akka.logLifecycleEvents=true  -Xms512m -Xmx512m  org.apache.spark.deploy.history.HistoryServer</arguments>
-</service>
