@@ -18,7 +18,6 @@
 
     set HADOOP_HOME=C:\bin\hadoop\
 
-
     set CLUSTERDIR=C:\Work\clusterconfigs\clusters\morzine
     set HADOOP_CONF_DIR=%CLUSTERDIR%\hadoop
     set SLIDER_CONF_DIR=%CLUSTERDIR%\slider
@@ -46,7 +45,7 @@ C:\bin\cygwin64\bin;C:\bin\Python27\;C:\Windows\system32;C:\Windows;C:\Windows\S
 
 ### filesystem
 
-     hdfs namenode -format
+    hdfs namenode -format
     hdfs --config %HADOOP_CONF_DIR% namenode -format
 
 These need the `start-dfs.cmd` and `start-yarn.cmd` files patched

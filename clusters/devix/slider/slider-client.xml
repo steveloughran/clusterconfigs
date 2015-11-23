@@ -43,6 +43,11 @@
     <value>true</value>
   </property>
 
+  <property>
+    <name>yarn.timeline-service.enabled</name>
+    <value>false</value>
+  </property>
+
 <!--
   <property>
     <name>security.slider.protocol.acl</name>
@@ -66,4 +71,12 @@
     <value>180000</value>
   </property>
 
+  <property>
+    <name>hadoop.registry.client.auth</name>
+    <value>kerberos</value>
+  </property>
+  <property>
+    <name>hadoop.registry.secure</name>
+    <value>true</value>
+  </property>
 </configuration>

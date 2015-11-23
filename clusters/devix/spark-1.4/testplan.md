@@ -26,7 +26,7 @@ set -gx SPARK_HOME /Users/stevel/Projects/Hortonworks/Projects/sparkwork/spark/d
 bin/spark-submit --deploy-mode cluster \
 --class org.apache.spark.examples.SparkPi \
 --properties-file /Users/stevel/Projects/Hortonworks/Projects/clusterconfigs/clusters/devix/spark/spark-defaults.conf \
-file:///Users/stevel/Projects/Hortonworks/Projects/spark/dist/lib/spark-examples-1.4.0-SNAPSHOT-hadoop2.6.0.jar
+file:///Users/stevel/Projects/Hortonworks/Projects/spark/dist/lib/spark-examples-1.4.1-hadoop2.6.0.jar
 
 bin/spark-submit  \
 --class org.apache.spark.examples.SparkPi \
@@ -51,7 +51,7 @@ dist/bin/spark-submit  \
   file:///Users/stevel/Projects/Hortonworks/Projects/sparkwork/spark/dist/lib/spark-examples-1.5.0-SNAPSHOT-hadoop2.6.0.jar 20
 
 
-lib/spark-examples-1.4.0-SNAPSHOT-hadoop2.6.0.jar
+lib/spark-examples-1.4.1-hadoop2.6.0.jar
 
 ```  
 [ ] Submit sample jobs: success, failure; view
