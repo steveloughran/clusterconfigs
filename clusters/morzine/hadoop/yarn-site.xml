@@ -2,14 +2,8 @@
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!-- Put site-specific property overrides in this file. -->
 <configuration xmlns:xi="http://www.w3.org/2001/XInclude">
-  <property>
-    <name>yarn.nodemanager.pmem-check-enabled</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>yarn.nodemanager.vmem-check-enabled</name>
-    <value>true</value>
-  </property>
+
+
   <!-- NodeManager -->
   <property>
     <name>yarn.nodemanager.address</name>
@@ -169,5 +163,47 @@
   <property>
     <name>yarn.resourcemanager.webapp.https.address</name>
     <value>morzine.cotham.uk:8089</value>
+  </property>
+
+  <!-- extras from clusterconfigs -->
+  <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>1</value>
+  </property>
+  <property>
+    <description>Whether physical memory limits will be enforced for
+      containers.
+    </description>
+    <name>yarn.nodemanager.pmem-check-enabled</name>
+    <value>false</value>
+  </property>
+  <!-- we really don't want checking here-->
+  <property>
+    <name>yarn.nodemanager.vmem-check-enabled</name>
+    <value>false</value>
+  </property>
+
+  <!-- how long after a failure to see what is left in the directory-->
+  <property>
+    <name>yarn.nodemanager.delete.debug-delay-sec</name>
+    <value>60000</value>
+  </property>
+
+  <!--time seconds before the process gets a -9 -->
+  <property>
+    <name>yarn.nodemanager.sleep-delay-before-sigkill.ms</name>
+    <value>30000</value>
+  </property>
+
+  <property>
+    <name>
+      yarn.timeline-service.leveldb-timeline-store.read-cache-size
+    </name>
+    <value>10000000</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.handler-thread-count</name>
+    <value>2</value>
   </property>
 </configuration>
