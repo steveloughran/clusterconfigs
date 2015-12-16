@@ -90,4 +90,4 @@ set HADOOP_SECURE_DN_PID_DIR=%HADOOP_PID_DIR%
 
 @rem A string representing this instance of hadoop. %USERNAME% by default.
 set HADOOP_IDENT_STRING=%USERNAME%
-set HADOOP_NAMENODE_OPTS=-Xloggc:%HADOOP_LOG_DIR%/gc-namenode.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps %HADOOP_NAMENODE_OPTS%
+set HADOOP_NAMENODE_OPTS=-Xloggc:%HADOOP_LOG_DIR%/gc-namenode.log -verbose:gc -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10 -XX:GCLogFileSize=512K %HADOOP_NAMENODE_OPTS%

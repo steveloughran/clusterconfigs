@@ -261,10 +261,10 @@
   </property>
   <property>
     <name>dfs.hosts.exclude</name>
-    <value>c:\hdp\hadoop-2.6.0.2.2.0.0-2041\etc\hadoop\dfs.exclude</value>
+    <value>c:\hdp\hadoop-2.7.1.2.3.0.0-2557\etc\hadoop\dfs.exclude</value>
   </property>
   <property>
     <name>dfs.hosts</name>
-    <value>c:\hdp\hadoop-2.6.0.2.2.0.0-2041\etc\hadoop\dfs.include</value>
+    <value>c:\hdp\hadoop-2.7.1.2.3.0.0-2557\etc\hadoop\dfs.include</value>
   </property>
 </configuration>
