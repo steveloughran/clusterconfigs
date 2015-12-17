@@ -38,12 +38,17 @@
     <name>HADOOP_CONF_DIR</name>
     <value>${SLIDER_CONF_DIR}/../hadoop</value>
   </property>
+
   <property>
     <name>slider.test.agent.enabled</name>
     <description>Flag to enable/disable Agent tests</description>
     <value>true</value>
   </property>
 
+  <property>
+    <name>slider.test.windows.cluster</name>
+    <value>true</value>
+  </property>
 
   <property>
     <name>slider.test.am.restart.time</name>
