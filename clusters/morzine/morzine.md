@@ -79,3 +79,19 @@ to propagate configs
 
     yarn --config %HADOOP_CONF_DIR%  application
     zookeeper-3.4.5/bin/zkServer.sh start
+
+# testplan
+
+```
+set -gx PROJECTS /Users/stevel/Projects/Hortonworks/Projects
+set -gx CLUSTER_DIR $PROJECTS/clusterconfigs/clusters/morzine
+set -gx SLIDER_CONF_DIR $CLUSTER_DIR/slider
+set -gx HADOOP_CONF_DIR $CLUSTER_DIR/hadoop
+
+export CLUSTER_DIR=$PROJECTS/clusterconfigs/clusters/morzine
+export SLIDER_CONF_DIR=$CLUSTER_DIR/slider
+export HADOOP_CONF_DIR=$CLUSTER_DIR/hadoop
+
+```
+
+
