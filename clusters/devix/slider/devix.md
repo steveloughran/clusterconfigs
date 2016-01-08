@@ -12,7 +12,7 @@ export HADOOP_CONF_DIR=${SLIDER_CONF_DIR}/../hadoop-conf
 ## fish
 
 ```
-set -gx SLIDER_VERSION 0.90.0-incubating-SNAPSHOT
+set -gx SLIDER_VERSION 0.91.0-incubating-SNAPSHOT
 set -gx PROJECTS /Users/stevel/Projects/Hortonworks/Projects
 set -gx BASEDIR $PROJECTS/slider/
 set -gx SLIDER_BIN $BASEDIR/slider-assembly/target/slider-$SLIDER_VERSION-all/slider-$SLIDER_VERSION/bin
@@ -29,7 +29,7 @@ set -gx HADOOP_CONF_DIR $CLUSTER_DIR/conf
 echo $status
 
 slider version
-
+slider kdiag
 slider resolve --path / --list -S java.security.auth.login.config=$SLIDER_CONF_DIR/jaas.conf
 
 ```

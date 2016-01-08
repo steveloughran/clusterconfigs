@@ -88,6 +88,7 @@ set -gx CLUSTER_DIR $PROJECTS/clusterconfigs/clusters/morzine
 set -gx SLIDER_CONF_DIR $CLUSTER_DIR/slider
 set -gx HADOOP_CONF_DIR $CLUSTER_DIR/hadoop
 
+export PROJECTS=/Users/stevel/Projects/Hortonworks/Projects
 export CLUSTER_DIR=$PROJECTS/clusterconfigs/clusters/morzine
 export SLIDER_CONF_DIR=$CLUSTER_DIR/slider
 export HADOOP_CONF_DIR=$CLUSTER_DIR/hadoop
