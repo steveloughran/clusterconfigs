@@ -5,8 +5,9 @@ setting up the path
 ### bash
 
 ```
-export SLIDER_CONF_DIR=~/Projects/Hortonworks/Projects/clusterconfigs/clusters/devix/slider
-export HADOOP_CONF_DIR=${SLIDER_CONF_DIR}/../hadoop-conf
+export DEVIX_DIR=~/Projects/Hortonworks/Projects/clusterconfigs/clusters/devix
+export SLIDER_CONF_DIR=$DEVIX_DIR/slider
+export HADOOP_CONF_DIR=${DEVIX_DIR}/../hadoop-conf
 ```
 
 ## fish
