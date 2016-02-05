@@ -7,7 +7,8 @@ setting up the path
 ```
 export DEVIX_DIR=~/Projects/Hortonworks/Projects/clusterconfigs/clusters/devix
 export SLIDER_CONF_DIR=$DEVIX_DIR/slider
-export HADOOP_CONF_DIR=${DEVIX_DIR}/../hadoop-conf
+export HADOOP_CONF_DIR=${DEVIX_DIR}/conf
+export HADOOP_CONF_DIR=${DEVIX_DIR}/clientconf
 ```
 
 ## fish
@@ -25,7 +26,8 @@ slider version
 
 set -gx CLUSTER_DIR $PROJECTS/clusterconfigs/clusters/devix
 set -gx SLIDER_CONF_DIR $CLUSTER_DIR/slider
-set -gx HADOOP_CONF_DIR $CLUSTER_DIR/conf
+#set -gx HADOOP_CONF_DIR $CLUSTER_DIR/conf
+set -gx HADOOP_CONF_DIR $CLUSTER_DIR/clientconf
 
 echo $status
 
@@ -47,3 +49,11 @@ mvit -Dslider.conf.dir=$SLIDER_CONF_DIR -Dit.test=AgentWebPagesIT
 ```
 
 
+target/hadoop-3.0.0-SNAPSHOT/bin/hdfs fetchdt --renewer yarn target/tokens
+target/hadoop-3.0.0-SNAPSHOT/bin/hdfs fetchdt --print target/tokens
+
+set -gx HADOOP_TOKEN_FILE_LOCATION \
+ /Users/stevel/Projects/Hortonworks/Projects/slider/slider-assembly/target/tokens.bin
+
+
+set -e HADOOP_TOKEN_FILE_LOCATION

@@ -19,12 +19,12 @@
   -->
 
 <configuration>
-  <property>
+<!--  <property>
     <name>hadoop.registry.client.auth</name>
     <value>kerberos</value>
   </property>
   <property>
     <name>hadoop.registry.secure</name>
     <value>true</value>
-  </property>
+  </property>-->
 </configuration>

@@ -88,7 +88,7 @@ RULE:[2:$1@$0](jn/_HOST@.*COTHAM)s/.*/hdfs/
 RULE:[2:$1@$0](falcon@.*COTHAM)s/.*/falcon/
 DEFAULT</value>
     </property>
-    
+
     <property>
       <name>hadoop.security.authentication</name>
       <value>kerberos</value>
@@ -98,7 +98,7 @@ DEFAULT</value>
       <name>hadoop.security.authorization</name>
       <value>true</value>
     </property>
-    
+
     <property>
       <name>io.compression.codecs</name>
       <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.SnappyCodec</value>

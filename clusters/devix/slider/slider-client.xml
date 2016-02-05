@@ -42,11 +42,13 @@
     <name>slider.test.agent.enabled</name>
     <value>true</value>
   </property>
+<!--
 
   <property>
     <name>yarn.timeline-service.enabled</name>
     <value>false</value>
   </property>
+-->
 
 <!--
   <property>
@@ -71,6 +73,7 @@
     <value>180000</value>
   </property>
 
+<!--
   <property>
     <name>hadoop.registry.client.auth</name>
     <value>kerberos</value>
@@ -79,4 +82,6 @@
     <name>hadoop.registry.secure</name>
     <value>true</value>
   </property>
+
+-->
 </configuration>
