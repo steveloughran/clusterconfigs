@@ -81,4 +81,9 @@
     <value>0.0.0.0:8010</value>
   </property>
 
+  <property>
+    <name>dfs.namenode.secondary.http-address</name>
+    <value>xubunty.cotham.uk:50090</value>
+  </property>
+
 </configuration>
