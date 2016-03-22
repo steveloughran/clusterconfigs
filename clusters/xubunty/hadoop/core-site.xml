@@ -17,4 +17,10 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
+
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://devix.cotham.uk:8020</value>
+    <final>true</final>
+  </property>
 </configuration>

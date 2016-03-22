@@ -18,4 +18,59 @@
 
 <configuration>
 
+
+  <property>
+    <name>dfs.namenode.http-address</name>
+    <value>xubunty.cotham.uk:50070</value>
+    <final>true</final>
+  </property>
+
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>dfs.support.append</name>
+    <value>true</value>
+    <final>true</final>
+  </property>
+
+
+  <property>
+    <name>dfs.client.read.shortcircuit</name>
+    <value>true</value>
+  </property>
+
+
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>/home/stevel/hadoopdata/hdfs/dn</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.data.dir.perm</name>
+    <value>750</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.du.reserved</name>
+    <value>1024</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.http.address</name>
+    <value>0.0.0.0:1022</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.https.address</name>
+    <value>0.0.0.0:50475</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.ipc.address</name>
+    <value>0.0.0.0:8010</value>
+  </property>
+
 </configuration>

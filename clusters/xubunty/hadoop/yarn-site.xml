@@ -15,5 +15,115 @@
 <configuration>
 
 <!-- Site specific YARN configuration properties -->
+  <property>
+    <name>hadoop.registry.rm.enabled</name>
+    <value>true</value>
+  </property>
 
+  <property>
+    <name>hadoop.registry.zk.quorum</name>
+    <value>xubunty.cotham.uk:2181</value>
+  </property>
+
+
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>xubunty.cotham.uk:8050</value>
+  </property>
+
+  <property>
+    <name>yarn.resourcemanager.admin.address</name>
+    <value>xubunty.cotham.uk:8141</value>
+  </property>
+
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>xubunty.cotham.uk</value>
+  </property>
+
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>xubunty.cotham.uk:8088</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.address</name>
+    <value>xubunty.cotham.uk:10200</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.bind-host</name>
+    <value>0.0.0.0</value>
+  </property>
+  <property>
+    <name>yarn.timeline-service.address</name>
+    <value>xubunty.cotham.uk:10200</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.bind-host</name>
+    <value>0.0.0.0</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.client.max-retries</name>
+    <value>30</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.client.retry-interval-ms</name>
+    <value>1000</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.delegation.key.renew-interval</name>
+    <value>60000</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.delegation.key.update-interval</name>
+    <value>60000</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.delegation.token.max-lifetime</name>
+    <value>180000</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.zk-timeout-ms</name>
+    <value>10000</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>2048</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>1</value>
+  </property>
+
+
+  <property>
+    <name>yarn.timeline-service.leveldb-timeline-store.path</name>
+    <value>/home/stevel/hadoopdata/yarn/timeline</value>
+  </property>
+
+
+  <property>
+    <name>yarn.timeline-service.webapp.address</name>
+    <value>xubunty.cotham.uk:8188</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.webapp.https.address</name>
+    <value>xubunty.cotham.uk:8190</value>
+  </property>
+  
 </configuration>
