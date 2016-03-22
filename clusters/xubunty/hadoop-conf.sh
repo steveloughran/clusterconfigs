@@ -8,3 +8,4 @@ export YARN_CONF_DIR=$HADOOP_CONF_DIR
 export HADOOP_HEAPSIZE=256
 export JAVA_HEAP_MAX=-Xmx256m
 export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
