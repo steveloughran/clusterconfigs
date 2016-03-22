@@ -63,11 +63,13 @@
     <name>dfs.datanode.du.reserved</name>
     <value>1024</value>
   </property>
+<!--
 
   <property>
     <name>dfs.datanode.http.address</name>
     <value>0.0.0.0:1022</value>
   </property>
+-->
 
   <property>
     <name>dfs.datanode.https.address</name>
