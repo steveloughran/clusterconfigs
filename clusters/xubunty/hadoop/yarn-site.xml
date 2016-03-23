@@ -25,7 +25,6 @@
     <value>xubunty.cotham.uk:2181</value>
   </property>
 
-
   <property>
     <name>yarn.resourcemanager.address</name>
     <value>xubunty.cotham.uk:8050</value>
@@ -53,16 +52,11 @@
 
   <property>
     <name>yarn.timeline-service.bind-host</name>
-    <value>0.0.0.0</value>
+    <value>xubunty.cotham.uk</value>
   </property>
   <property>
     <name>yarn.timeline-service.address</name>
     <value>xubunty.cotham.uk:10200</value>
-  </property>
-
-  <property>
-    <name>yarn.timeline-service.bind-host</name>
-    <value>0.0.0.0</value>
   </property>
 
   <property>

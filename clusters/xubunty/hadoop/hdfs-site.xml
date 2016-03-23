@@ -17,8 +17,6 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-
-
   <property>
     <name>dfs.namenode.http-address</name>
     <value>xubunty.cotham.uk:50070</value>
@@ -45,7 +43,7 @@
 
   <property>
     <name>dfs.client.read.shortcircuit</name>
-    <value>true</value>
+    <value>false</value>
   </property>
 
 
