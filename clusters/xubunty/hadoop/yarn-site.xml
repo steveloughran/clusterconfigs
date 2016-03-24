@@ -145,4 +145,17 @@
     <value>true</value>
   </property>
 
+
+  <property>
+    <name>yarn.timeline-service.entity-group-fs-store.active-dir</name>
+    <value>${fs.defaultFS}/tmp/entity-file-history/active</value>
+    <description>HDFS path to store active application’s timeline data</description>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.entity-group-fs-store.done-dir</name>
+    <value>${fs.defaultFS}/tmp/entity-file-history/done/</value>
+    <description>HDFS path to store done application’s timeline data</description>
+  </property>
+
 </configuration>

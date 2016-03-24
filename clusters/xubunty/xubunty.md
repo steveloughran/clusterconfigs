@@ -38,9 +38,15 @@ $HADOOP_YARN_HOME/sbin/yarn-daemon.sh start timelineserver
 
 
 ```bash
-$HADOOP_YARN_HOME/sbin/start-yarn.sh
-$HADOOP_YARN_HOME/sbin/start-yarn.sh
-$HADOOP_YARN_HOME/sbin/yarn-daemon.sh start timelineserver
+start-dfs.sh
+start-yarn.sh
+yarn-daemon.sh start timelineserver
+
+stop-dfs.sh
+stop-yarn.sh
+yarn-daemon.sh stop timelineserver
+
+
 
 ```
 
