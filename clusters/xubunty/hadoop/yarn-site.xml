@@ -127,6 +127,10 @@
     <value>1.5</value>
   </property>
   <property>
+    <name>yarn.timeline-service.store-class</name>
+    <value>org.apache.hadoop.yarn.server.timeline.EntityGroupFSTimelineStore</value>
+  </property>
+  <property>
     <name>yarn.timeline-service.entity-group-fs-store.scan-interval-seconds</name>
     <value>5</value>
   </property>
