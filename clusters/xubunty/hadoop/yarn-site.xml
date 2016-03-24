@@ -119,5 +119,30 @@
     <name>yarn.timeline-service.webapp.https.address</name>
     <value>xubunty.cotham.uk:8190</value>
   </property>
-  
+
+
+  <!-- ATS 1.5 Options -->
+  <property>
+    <name>yarn.timeline-service.version</name>
+    <value>1.5</value>
+  </property>
+  <property>
+    <name>yarn.timeline-service.entity-group-fs-store.scan-interval-seconds</name>
+    <value>5</value>
+  </property>
+  <property>
+    <name>yarn.timeline-service.entity-group-fs-store.summary-entity-types</name>
+    <value>YARN_APPLICATION,YARN_APPLICATION_ATTEMPT,YARN_CONTAINER,spark_event_v01</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.entity-group-fs-store.group-id-plugin-classes</name>
+    <value>org.apache.spark.deploy.history.yarn.plugin.SparkATSPlugin</value>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.entity-group-fs-store.entity-file.fs-support-append</name>
+    <value>true</value>
+  </property>
+
 </configuration>
