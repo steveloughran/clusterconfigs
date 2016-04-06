@@ -88,6 +88,7 @@
     <name>yarn.timeline-service.enabled</name>
     <value>true</value>
   </property>
+
   <property>
     <name>yarn.resourcemanager.zk-timeout-ms</name>
     <value>10000</value>
@@ -126,14 +127,12 @@
     <name>yarn.timeline-service.version</name>
     <value>1.5</value>
   </property>
+
   <property>
     <name>yarn.timeline-service.store-class</name>
     <value>org.apache.hadoop.yarn.server.timeline.EntityGroupFSTimelineStore</value>
   </property>
-  <property>
-    <name>yarn.timeline-service.entity-group-fs-store.scan-interval-seconds</name>
-    <value>5</value>
-  </property>
+
   <property>
     <name>yarn.timeline-service.entity-group-fs-store.summary-entity-types</name>
     <value>YARN_APPLICATION,YARN_APPLICATION_ATTEMPT,YARN_CONTAINER,spark_event_v01</value>
@@ -149,7 +148,6 @@
     <value>true</value>
   </property>
 
-
   <property>
     <name>yarn.timeline-service.entity-group-fs-store.active-dir</name>
     <value>${fs.defaultFS}/tmp/entity-file-history/active</value>
@@ -160,6 +158,11 @@
     <name>yarn.timeline-service.entity-group-fs-store.done-dir</name>
     <value>${fs.defaultFS}/tmp/entity-file-history/done/</value>
     <description>HDFS path to store done application’s timeline data</description>
+  </property>
+
+  <property>
+    <name>yarn.timeline-service.entity-group-fs-store.scan-interval-seconds</name>
+    <value>5</value>
   </property>
 
 </configuration>

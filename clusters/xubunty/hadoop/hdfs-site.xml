@@ -48,8 +48,44 @@
 
 
   <property>
+    <name>hdfs.dir</name>
+    <value>/home/stevel/hadoopdata/hdfs</value>
+  </property>
+
+  <property>
     <name>dfs.datanode.data.dir</name>
-    <value>/home/stevel/hadoopdata/hdfs/dn</value>
+    <value>${hdfs.dir}/dn</value>
+  </property>
+
+  <property>
+    <name>dfs.journalnode.edits.dir</name>
+    <value>${hdfs.dir}/journalnode</value>
+  </property>
+
+
+  <property>
+    <name>dfs.namenode.checkpoint.dir</name>
+    <value>${hdfs.dir}/namesecondary</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.checkpoint.edits.dir</name>
+    <value>${dfs.namenode.checkpoint.dir}</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>${hdfs.dir}/namenode</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.name.dir.restore</name>
+    <value>true</value>
+  </property>
+
+  <property>
+    <name>dfs.namenode.safemode.threshold-pct</name>
+    <value>1.0f</value>
   </property>
 
   <property>

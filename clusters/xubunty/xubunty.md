@@ -17,6 +17,17 @@
 2.8.0-SNAPSHOT, manual build, no security.
 
 
+## Building
+
+```bash
+
+mvn clean package -Pdist,native -DskipTests -Dmaven.javadoc.skip=true
+
+mvn package -Pdist,native -DskipTests -Dmaven.javadoc.skip=true
+
+```
+
+# env vars on desktop
 
 ```bash
 
@@ -32,7 +43,8 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 ```
 
-$HADOOP_YARN_HOME/sbin/yarn-daemon.sh start timelineserver
+
+
 
 ## Manual launch
 
@@ -45,6 +57,8 @@ yarn-daemon.sh start timelineserver
 stop-dfs.sh
 stop-yarn.sh
 yarn-daemon.sh stop timelineserver
+
+$HADOOP_YARN_HOME/sbin/yarn-daemon.sh start timelineserver
 
 
 
@@ -77,14 +91,51 @@ ls -l $HADOOP_CONF_DIR
 ```bash
 
 set -gx SPARK_CONF_DIR $CLUSTER_DIR/spark
-set -gx SPARK_DIST /Users/stevel/Projects/Hortonworks/Projects/sparkwork/spark/dist/
+set -gx SPARK_DIST $PROJECTS/sparkwork/spark/dist/
 set -gx SPARK_LIB $SPARK_DIST/lib
 set -gx SPARK_HOME $SPARK_DIST
-set -gx V 1.6.1-hadoop2.8.0-SNAPSHOT
+
+echo $SPARK_DIST
+
+set -gx SV 1.6.1
+
+
+set -gx HV hadoop2.8.0-SNAPSHOT
+
+# or
+
+set -gx HV 2.7.1-SNAPSHOT
+
+set -gx SHV $SV-hadoop$HV; echo $SHV
+
 set -gx SPARK_DEFAULT $SPARK_CONF_DIR/spark-defaults.conf
 
+
+echo $SPARK_LIB/spark-examples-$SHV.jar
+ls -l $SPARK_LIB/spark-examples-$SHV.jar
+
 ls -l $SPARK_DEFAULT
-ls -l $SPARK_LIB/spark-examples-$V.jar
+
+## scp over the timeline plugin
+
+set -gx PLUGIN yarn-timeline/yarn-timeline-ats-plugin/target/spark-yarn-timeline-ats-plugin_2.10-$SV.jar
+ls -l $PLUGIN
+
+scp $PLUGIN xubunty:hadoop_home/share/hadoop/yarn/lib/
+```
+
+
+### starting the history server
+
+```
+
+dist/sbin/start-history-server.sh
+
+```
+
+### Submitting work
+
+```
 
 bin/spark-submit --deploy-mode cluster \
 --class org.apache.spark.examples.SparkPi \
