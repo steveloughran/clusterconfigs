@@ -23,7 +23,7 @@ export JSVC_HOME=/usr/lib/bigtop-utils
 # The maximum amount of heap to use, in MB. Default is 1000.
 export HADOOP_HEAPSIZE="256"
 
-export HADOOP_NAMENODE_INIT_HEAPSIZE="-Xms256m"
+export HADOOP_NAMENODE_INIT_HEAPSIZE="-Xms128m"
 
 # Extra Java runtime options.  Empty by default.
 export HADOOP_OPTS="-Djava.net.preferIPv4Stack=true ${HADOOP_OPTS}"

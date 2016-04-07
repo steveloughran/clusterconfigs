@@ -56,10 +56,18 @@ yarn-daemon.sh start timelineserver
 
 stop-dfs.sh
 stop-yarn.sh
+
+# After copying plugin; setting up HDFS
 yarn-daemon.sh stop timelineserver
+
+yarn-daemon.sh stop resourcemanager
+yarn-daemon.sh stop nodemanager
+
+
 
 $HADOOP_YARN_HOME/sbin/yarn-daemon.sh start timelineserver
 
+less /home/stevel/hadoop_home/logs/yarn-stevel-timelineserver-xubunty.log
 
 
 ```
@@ -108,8 +116,8 @@ set -gx HV 2.7.1-SNAPSHOT
 
 set -gx SHV $SV-hadoop$HV; echo $SHV
 
+echo $SHV
 set -gx SPARK_DEFAULT $SPARK_CONF_DIR/spark-defaults.conf
-
 
 echo $SPARK_LIB/spark-examples-$SHV.jar
 ls -l $SPARK_LIB/spark-examples-$SHV.jar
@@ -119,17 +127,29 @@ ls -l $SPARK_DEFAULT
 ## scp over the timeline plugin
 
 set -gx PLUGIN yarn-timeline/yarn-timeline-ats-plugin/target/spark-yarn-timeline-ats-plugin_2.10-$SV.jar
+
 ls -l $PLUGIN
 
 scp $PLUGIN xubunty:hadoop_home/share/hadoop/yarn/lib/
 ```
 
+### HDFS setup
+
+```
+
+hdfs dfs -mkdir -p .
+hdfs dfs -mkdir -p /tmp/entity-file-history/active
+
+cp assembly/target/scala-2.10/spark-assembly-$SHV.jar dist/lib
+```
 
 ### starting the history server
 
 ```
 
 dist/sbin/start-history-server.sh
+
+dist/sbin/stop-history-server.sh
 
 ```
 
@@ -140,12 +160,41 @@ dist/sbin/start-history-server.sh
 bin/spark-submit --deploy-mode cluster \
 --class org.apache.spark.examples.SparkPi \
 --properties-file $SPARK_DEFAULT \
-file://$SPARK_LIB/spark-examples-$V.jar 20
+file://$SPARK_LIB/spark-examples-$SHV.jar 20
 
-bin/spark-class org.apache.spark.deploy.SparkSubmit --deploy-mode client \
+bin/spark-class org.apache.spark.deploy.SparkSubmit \
+--master yarn --deploy-mode client \
 --class org.apache.spark.examples.SparkPi \
 --properties-file $SPARK_CONF_DIR/spark-defaults.conf \
-file://$SPARK_LIB/spark-examples-$V.jar 10
+file://$SPARK_LIB/spark-examples-$SHV.jar 100
+
+
+```
+
+
+### Demo
+
+YARN down, ATS UP
+
+```
+# start history server
+
+listing
+
+look @ log.
+
+# start RM
+
+# log happier
+
+# view history
+
+# View ATS
+
+ http://xubunty.cotham.uk:8188/ws/v1/timeline/spark_event_v01?fields=PRIMARYFILTERS,OTHERINFO
+
+ view detail
+
 
 
 ```

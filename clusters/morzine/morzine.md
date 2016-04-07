@@ -82,7 +82,7 @@ to propagate configs
 
 # testplan
 
-```
+```bash
 set -gx PROJECTS /Users/stevel/Projects/Hortonworks/Projects
 set -gx CLUSTER_DIR $PROJECTS/clusterconfigs/clusters/morzine
 set -gx SLIDER_CONF_DIR $CLUSTER_DIR/slider

@@ -46,7 +46,6 @@ mvit -Dslider.conf.dir=$SLIDER_CONF_DIR -Dit.test=ListCommandIT
 
 // deploy app & web client
 mvit -Dslider.conf.dir=$SLIDER_CONF_DIR -Dit.test=AgentWebPagesIT
-```
 
 
 target/hadoop-3.0.0-SNAPSHOT/bin/hdfs fetchdt --renewer yarn target/tokens
@@ -57,3 +56,6 @@ set -gx HADOOP_TOKEN_FILE_LOCATION \
 
 
 set -e HADOOP_TOKEN_FILE_LOCATION
+
+
+```
