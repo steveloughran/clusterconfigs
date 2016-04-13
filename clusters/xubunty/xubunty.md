@@ -54,11 +54,12 @@ start-dfs.sh
 start-yarn.sh
 yarn-daemon.sh start timelineserver
 
-stop-dfs.sh
-stop-yarn.sh
 
 # After copying plugin; setting up HDFS
 yarn-daemon.sh stop timelineserver
+stop-yarn.sh
+stop-dfs.sh
+
 
 yarn-daemon.sh stop resourcemanager
 yarn-daemon.sh stop nodemanager

@@ -15,6 +15,9 @@
 <configuration>
 
 <!-- Site specific YARN configuration properties -->
+
+  <!-- Registry -->
+
   <property>
     <name>hadoop.registry.rm.enabled</name>
     <value>true</value>
@@ -23,6 +26,29 @@
   <property>
     <name>hadoop.registry.zk.quorum</name>
     <value>xubunty.cotham.uk:2181</value>
+  </property>
+
+
+  <!--SCHEDULER-->
+  <property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>4096</value>
+  </property>
+
+  <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>1</value>
+  </property>
+
+  <!-- RM -->
+  <property>
+    <name>yarn.resourcemanager.scheduler.class</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+  </property>
+
+  <property>
+    <name>yarn.resourcemanager.system-metrics-publisher.enabled</name>
+    <value>true</value>
   </property>
 
   <property>
@@ -44,6 +70,68 @@
     <name>yarn.resourcemanager.webapp.address</name>
     <value>xubunty.cotham.uk:8088</value>
   </property>
+
+  <property>
+    <name>yarn.resourcemanager.zk-timeout-ms</name>
+    <value>10000</value>
+  </property>
+
+  <property>
+    <name>yarn.resourcemanager.am.max-attempts</name>
+    <value>4</value>
+  </property>
+
+
+
+  <!-- nodemanager -->
+
+  <property>
+    <name>yarn.nodemanager.resource.cpu-vcores</name>
+    <value>2</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>4096</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.resource.percentage-physical-cpu-limit</name>
+    <value>800</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.vmem-check-enabled</name>
+    <value>false</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.vmem-pmem-ratio</name>
+    <value>4</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.delete.debug-delay-sec</name>
+    <value>6000</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.log.retain-second</name>
+    <value>604800</value>
+  </property>
+
+  <property>
+    <name>yarn.nodemanager.pmem-check-enabled</name>
+    <value>false</value>
+  </property>
+
+
+  <property>
+    <name>yarn.nodemanager.container-executor.class</name>
+    <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
+  </property>
+
+  <!-- TIMELINE -->
+
 
   <property>
     <name>yarn.timeline-service.address</name>
@@ -88,22 +176,6 @@
     <name>yarn.timeline-service.enabled</name>
     <value>true</value>
   </property>
-
-  <property>
-    <name>yarn.resourcemanager.zk-timeout-ms</name>
-    <value>10000</value>
-  </property>
-
-  <property>
-    <name>yarn.scheduler.maximum-allocation-mb</name>
-    <value>2048</value>
-  </property>
-
-  <property>
-    <name>yarn.scheduler.minimum-allocation-mb</name>
-    <value>1</value>
-  </property>
-
 
   <property>
     <name>yarn.timeline-service.leveldb-timeline-store.path</name>
