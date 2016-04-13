@@ -124,12 +124,6 @@
     <value>false</value>
   </property>
 
-
-  <property>
-    <name>yarn.nodemanager.container-executor.class</name>
-    <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
-  </property>
-
   <!-- TIMELINE -->
 
 
