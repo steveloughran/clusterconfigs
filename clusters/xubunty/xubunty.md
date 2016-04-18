@@ -54,6 +54,8 @@ start-dfs.sh
 start-yarn.sh
 yarn-daemon.sh start timelineserver
 
+start-dfs.sh && start-yarn.sh && yarn-daemon.sh start timelineserver
+
 
 # After copying plugin; setting up HDFS
 yarn-daemon.sh stop timelineserver
@@ -156,18 +158,22 @@ dist/sbin/stop-history-server.sh
 
 ### Submitting work
 
-```
+```bash
+
+bin/spark-class org.apache.spark.deploy.SparkSubmit \
+     --master yarn --deploy-mode client \
+     --class org.apache.spark.examples.SparkPi \
+     --properties-file $SPARK_CONF_DIR/spark-defaults.conf \
+     file://$SPARK_LIB/spark-examples-$SHV.jar 100
+
+
+
 
 bin/spark-submit --deploy-mode cluster \
 --class org.apache.spark.examples.SparkPi \
 --properties-file $SPARK_DEFAULT \
 file://$SPARK_LIB/spark-examples-$SHV.jar 20
 
-bin/spark-class org.apache.spark.deploy.SparkSubmit \
---master yarn --deploy-mode client \
---class org.apache.spark.examples.SparkPi \
---properties-file $SPARK_CONF_DIR/spark-defaults.conf \
-file://$SPARK_LIB/spark-examples-$SHV.jar 100
 
 
 ```

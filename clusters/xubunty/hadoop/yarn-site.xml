@@ -28,6 +28,12 @@
     <value>xubunty.cotham.uk:2181</value>
   </property>
 
+  <!--MISC -->
+
+  <property>
+    <name>yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage</name>
+    <value>98.5</value>
+  </property>
 
   <!--SCHEDULER-->
   <property>
