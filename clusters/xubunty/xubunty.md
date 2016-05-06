@@ -48,6 +48,7 @@ export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
 ## Manual launch
 
+**Copy over the ATS JAR FIRST**
 
 ```bash
 start-dfs.sh
@@ -65,6 +66,8 @@ stop-dfs.sh
 
 yarn-daemon.sh stop resourcemanager
 yarn-daemon.sh stop nodemanager
+
+yarn-daemon.sh start nodemanager
 
 
 
@@ -138,7 +141,7 @@ scp $PLUGIN xubunty:hadoop_home/share/hadoop/yarn/lib/
 
 ### HDFS setup
 
-```
+```bash
 
 hdfs dfs -mkdir -p .
 hdfs dfs -mkdir -p /tmp/entity-file-history/active
@@ -148,7 +151,7 @@ cp assembly/target/scala-2.10/spark-assembly-$SHV.jar dist/lib
 
 ### starting the history server
 
-```
+```bash
 
 dist/sbin/start-history-server.sh
 
@@ -183,8 +186,12 @@ file://$SPARK_LIB/spark-examples-$SHV.jar 20
 
 YARN down, ATS UP
 
-```
+```bash
+
 # start history server
+
+
+dist/sbin/start-history-server.sh
 
 listing
 
